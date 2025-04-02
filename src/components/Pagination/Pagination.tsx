@@ -13,14 +13,17 @@ export const Pagination: React.FC<Props> = ({
   perPage,
   total,
   currentPage,
-  onPageChange,
+  onPageChange = () => {},
 }) => {
-  const fromNum = perPage * currentPage - (perPage - 1);
-  const toNum = fromNum + perPage - 1;
+  const fromNum: number = perPage * currentPage - (perPage - 1);
+  const toNum: number = fromNum + perPage - 1;
   const lastPage = Math.ceil(total / perPage);
   const amountOfPages = getNumbers(1, total);
-  const items = getNumbers(1, 42);
+  const items = getNumbers(1, total);
   const activePage = currentPage;
+
+  if (total) {
+  }
 
   return (
     <React.Fragment>
