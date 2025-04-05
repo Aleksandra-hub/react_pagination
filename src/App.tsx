@@ -9,7 +9,7 @@ export const App: React.FC = () => {
   const [perPage, setPerPages] = useState(5);
   const [currentPage, setCurentPage] = useState(1);
   const fromNum = perPage * currentPage - (perPage - 1);
-  const toNum = (num: number, page: number, total: number) => {
+  const toNum = (num: number, page: number, total: number): number => {
     if (num + page > total) {
       return total;
     }
